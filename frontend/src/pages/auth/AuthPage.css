@@ -1,0 +1,221 @@
+/* =========================================================
+   CENTRALIZED THEME VARIABLES (Light & Dark Mode Support)
+   ========================================================= */
+:root {
+  /* Light Theme Colors */
+  --primary-color: #e23744;         /* Zomato Red */
+  --primary-hover: #d12936;
+  --primary-active: #b81e2a;
+  
+  --bg-main: #f8f9fa;               /* Soft background */
+  --card-bg: #ffffff;               /* Clean white card */
+  
+  --text-main: #1f2937;             /* Dark readable text */
+  --text-muted: #6b7280;            /* Subtle grey text */
+  
+  --border-color: #e5e7eb;
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --input-focus-ring: rgba(226, 55, 68, 0.15);
+  
+  --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+  --radius-card: 16px;
+  --radius-input: 8px;
+  
+  --transition-fast: all 0.2s ease-in-out;
+}
+
+/* Auto Dark Mode (Based on System Settings) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: #121212;             /* Deep dark background */
+    --card-bg: #1e1e1e;             /* Sleek dark card */
+    
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    
+    --border-color: #2c2c2c;
+    --input-bg: #2a2a2a;
+    --input-border: #3d3d3d;
+    --input-focus-ring: rgba(226, 55, 68, 0.25);
+    
+    --shadow-card: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* =========================================================
+   LAYOUT & CONTAINER STYLES
+   ========================================================= */
+.auth-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-main);
+  padding: 24px 16px;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  transition: var(--transition-fast);
+}
+
+.auth-card {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 420px;
+  padding: 36px 32px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-card);
+  box-sizing: border-box;
+  transition: var(--transition-fast);
+}
+
+/* =========================================================
+   TAB TOGGLE STYLES ("For you" / "For restaurants")
+   ========================================================= */
+.auth-tabs {
+  display: flex;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  padding: 4px;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  flex: 1;
+  text-align: center;
+  padding: 9px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  border-radius: 7px;
+  transition: var(--transition-fast);
+}
+
+.tab-btn:hover {
+  color: var(--text-main);
+}
+
+.tab-btn.active {
+  background-color: var(--card-bg);
+  color: var(--text-main);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================
+   TYPOGRAPHY / HEADINGS
+   ========================================================= */
+.auth-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-main);
+  text-align: center;
+  letter-spacing: -0.5px;
+}
+
+.auth-subtitle {
+  margin: 8px 0 24px 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FORM CONTROLS & INPUTS
+   ========================================================= */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--input-border);
+  background-color: var(--input-bg);
+  color: var(--text-main);
+  outline: none;
+  box-sizing: border-box;
+  transition: var(--transition-fast);
+}
+
+.form-group input::placeholder {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.form-group input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px var(--input-focus-ring);
+}
+
+/* =========================================================
+   BUTTONS & ACTIONS
+   ========================================================= */
+.auth-button {
+  margin-top: 8px;
+  width: 100%;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: var(--radius-input);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.auth-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.auth-button:active {
+  background-color: var(--primary-active);
+  transform: translateY(0);
+}
+
+/* =========================================================
+   FOOTER & LINKS
+   ========================================================= */
+.auth-footer {
+  margin-top: 22px;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.auth-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+  color: var(--primary-hover);
+}

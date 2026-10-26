@@ -1,0 +1,235 @@
+.create-food-page {
+  min-height: 100vh;
+  padding: 36px 16px;
+  background: var(--page-bg);
+  color: var(--text-primary);
+}
+
+.create-food-content {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.create-food-heading {
+  margin-bottom: 24px;
+}
+
+.create-food-eyebrow {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.create-food-heading h1 {
+  margin: 0;
+  font-size: clamp(1.7rem, 7vw, 2.25rem);
+  font-weight: 750;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.create-food-heading p {
+  margin: 10px 0 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.create-food-form {
+  display: grid;
+  gap: 22px;
+  padding: 22px 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.create-food-feedback {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.create-food-feedback p {
+  margin: 0;
+}
+
+.create-food-error {
+  border-color: #e7a7ad;
+  background: rgba(226, 55, 68, 0.08);
+  color: var(--accent);
+}
+
+.create-food-login-link {
+  width: fit-content;
+  color: inherit;
+  font-weight: 650;
+  text-underline-offset: 3px;
+}
+
+.create-food-field {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.create-food-field label {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.create-food-hint {
+  margin: -3px 0 2px;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.create-food-field input,
+.create-food-field textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 13px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.9rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.create-food-field input::placeholder,
+.create-food-field textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.85;
+}
+
+.create-food-field input:focus,
+.create-food-field textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--focus-ring);
+}
+
+.create-food-field input[type='file'] {
+  padding: 10px;
+  border-style: dashed;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.create-food-field input[type='file']::file-selector-button {
+  margin-right: 12px;
+  padding: 8px 11px;
+  border: 0;
+  border-radius: 7px;
+  background: var(--surface-muted);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.create-food-video-actions {
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+}
+
+.create-food-video-name {
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.create-food-video-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.create-food-video-button {
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.create-food-video-button:hover {
+  border-color: var(--accent);
+}
+
+.create-food-video-remove {
+  color: var(--accent);
+}
+
+.create-food-field textarea {
+  min-height: 132px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.create-food-submit {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 2px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--accent);
+  color: #fff;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.create-food-submit:hover {
+  background: var(--accent-hover);
+}
+
+.create-food-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.create-food-submit:active {
+  transform: translateY(1px);
+}
+
+@media (min-width: 640px) {
+  .create-food-page {
+    padding: 64px 24px;
+  }
+
+  .create-food-heading {
+    margin-bottom: 30px;
+  }
+
+  .create-food-form {
+    gap: 24px;
+    padding: 32px;
+  }
+}
